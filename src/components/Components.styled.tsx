@@ -105,4 +105,10 @@ export const Form = styled.form`
   gap: .5rem;
   flex-direction: column;
   align-items: center;
-`
+`;
+
+export const Creator = styled.p`
+  text-align: center;
+  margin: 1rem 0;
+  color: teal;
+`;

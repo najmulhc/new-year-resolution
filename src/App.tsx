@@ -3,7 +3,7 @@ import Add from "./components/Add";
 import Homepage from "./components/Main";
 import { Route, Routes, useNavigate } from "react-router";
 import { BrowserRouter } from "react-router-dom";
-import { HeaderContainer, Title, Button } from "./components/Components.styled";
+import { HeaderContainer, Title, Button, Creator } from "./components/Components.styled";
 import { SyntheticEvent } from "react";
 
 const App: React.FC = () => {
@@ -22,6 +22,7 @@ const App: React.FC = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/add-my-resolution" element={<Add />} />
       </Routes>
+      <Creator>This web application is created by <b> @najmulhc</b></Creator>
     </>
   );
 };

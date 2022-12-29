@@ -18,7 +18,7 @@ const Homepage: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3020/api/v1");
+        const response = await fetch("https://new-year-resolution-s.vercel.app/api/v1");
         const data = await response.json();
         await setResolutions(data.data);
       } catch (error) {

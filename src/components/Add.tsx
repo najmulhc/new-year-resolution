@@ -38,7 +38,7 @@ const Add: React.FC = () => {
       color: colors[Math.ceil(Math.random() * 5)],
     }; 
     console.log(JSON.stringify(user))
-    await fetch("http://localhost:3020/api/v1", {
+    await fetch("https://new-year-resolution-s.vercel.app/api/v1", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
