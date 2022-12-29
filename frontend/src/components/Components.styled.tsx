@@ -1,6 +1,6 @@
 // all the styled components will be here
 
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 interface UserProps {
   color: string;
@@ -47,4 +47,29 @@ export const UserName = styled.h3<UserProps>`
     color: ${props => props.color};
     margin: .25rem;
     margin-top: 2rem;
+`;
+
+export const HeaderContainer = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #388087;
+  color: #fff;
+  padding: 1rem;
+`;
+
+export const Title = styled.h1`
+  font-size: 2rem;
+  margin: 0;
+`;
+
+export const Button = styled.button`
+  background-color: #fff;
+  color: #388087;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
 `;

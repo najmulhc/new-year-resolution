@@ -1,26 +1,42 @@
-import { Card, HomeCardContainer, Resolution, UserName } from "./Components.styled";
+import { useEffect, useState } from "react";
+import {
+  Card,
+  HomeCardContainer,
+  Resolution,
+  UserName,
+} from "./Components.styled";
+
+type OneResolution = {
+  name: string;
+  resolution: string;
+  color: string;
+};
 
 const Homepage: React.FC = () => {
+  const [resolutions, setResolutions] = useState<OneResolution[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3020/api/v1");
+        const data = await response.json();
+        await setResolutions(data.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <div>
-       <HomeCardContainer>
-         <Card> 
-            <Resolution>
-                I want to play soccer! I love to play the game for a long time with my friends.
-            </Resolution>
-            <UserName color="purple">
-                Najmul Huda Chowdhury
-            </UserName>
-         </Card>
-         <Card> 
-            <Resolution>
-                I want to steal more data from humans so that I can sell them and get richer!
-            </Resolution>
-            <UserName color="#128dff">
-                Mark Jukarburg
-            </UserName>
-         </Card>
-       </HomeCardContainer>
+      <HomeCardContainer>
+        {resolutions.map((resolution) => (
+          <Card>
+            <Resolution>{resolution.resolution}</Resolution>
+            <UserName color="#388087">{resolution.name}</UserName>
+          </Card>
+        ))}
+      </HomeCardContainer>
     </div>
   );
 };

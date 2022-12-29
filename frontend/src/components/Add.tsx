@@ -1,9 +1,14 @@
-const Add : React.FC  = () => {
-    return (
-        <div>
+import { Route, Routes } from "react-router";
+import { BrowserRouter } from "react-router-dom";
+import { HeaderContainer, Title, Button } from "./Components.styled";
+import Homepage from "./Main";
 
-        </div>
-    )
+const Add: React.FC = () => {
+  return (
+    <>
+       
+    </>
+  );
 };
 
 export default Add;
