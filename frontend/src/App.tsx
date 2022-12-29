@@ -16,7 +16,7 @@ const App: React.FC = () => {
     <>
       <HeaderContainer>
         <Title>2023 Resolutions</Title>
-        <Button onClick={handleAddbuttonClick}>Add mine</Button>
+        <Button backgroundColor="white" color="teal" onClick={handleAddbuttonClick}>Add mine</Button>
       </HeaderContainer>
       <Routes>
         <Route path="/" element={<Homepage />} />

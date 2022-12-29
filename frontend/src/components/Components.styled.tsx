@@ -7,11 +7,16 @@ interface UserProps {
   children: string;
 }
 
+interface ButtonProps {
+  color: string;
+  backgroundColor: string
+}
+
 export const H1 = styled.h1`
   color: teal;
 `;
 
-export const HomeCardContainer = styled.div`
+export const CardContainer = styled.div`
   display: grid;
   gap: 2rem;
   margin: 3rem;
@@ -29,8 +34,8 @@ export const HomeCardContainer = styled.div`
 export const Card = styled.div`
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0.5rem 0.5rem 1rem #1010113d;
-  min-height: 4rem;
+  box-shadow: 0.5rem 0.5rem 1rem #1010113d; 
+  max-width: 20rem; 
 `;
 
 export const Resolution = styled.h2`
@@ -38,15 +43,14 @@ export const Resolution = styled.h2`
   font-size: larger;
   color: #020101;
   font-family: "montserrat";
-  margin-bottom: 0.5rem;
+  margin-bottom: auto;
 `;
 
 export const UserName = styled.h3<UserProps>`
-    font-size: medium;
-    text-align: right;
-    color: ${props => props.color};
-    margin: .25rem;
-    margin-top: 2rem;
+  font-size: medium;
+  text-align: right;
+  color: ${(props) => props.color};
+  margin-bottom: auto;
 `;
 
 export const HeaderContainer = styled.header`
@@ -63,9 +67,9 @@ export const Title = styled.h1`
   margin: 0;
 `;
 
-export const Button = styled.button`
-  background-color: #fff;
-  color: #388087;
+export const Button = styled.button<ButtonProps>`
+  background-color: ${props => props.backgroundColor};
+  color: ${props => props.color};
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
@@ -73,3 +77,32 @@ export const Button = styled.button`
   font-weight: 500;
   padding: 0.5rem 1rem;
 `;
+
+export const FormContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+`;
+
+export const FormHeader = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: teal;
+`;
+
+export const Input = styled.input`
+  width: 100%;
+  padding: 0.25rem;
+  background-color: white;
+  border: 1px solid teal;
+  font-size: 1rem;
+  color: teal;
+  outline: none;
+  border-radius: .25rem;
+`;
+export const Form = styled.form`
+  display: flex;
+  gap: .5rem;
+  flex-direction: column;
+  align-items: center;
+`

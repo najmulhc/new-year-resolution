@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   Card,
-  HomeCardContainer,
+  CardContainer,
   Resolution,
   UserName,
 } from "./Components.styled";
@@ -29,14 +29,14 @@ const Homepage: React.FC = () => {
   }, []);
   return (
     <div>
-      <HomeCardContainer>
+      <CardContainer>
         {resolutions.map((resolution) => (
           <Card>
             <Resolution>{resolution.resolution}</Resolution>
-            <UserName color="#388087">{resolution.name}</UserName>
+            <UserName color={resolution.color}>{resolution.name}</UserName>
           </Card>
         ))}
-      </HomeCardContainer>
+      </CardContainer>
     </div>
   );
 };
